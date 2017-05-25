@@ -283,13 +283,6 @@
         <editHeading>false</editHeading>
         <label>Special Handle Instructions</label>
         <layoutColumns>
-            <layoutItems>
-                <height>200</height>
-                <page>SHI</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
