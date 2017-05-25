@@ -56,6 +56,72 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <businessProcesses>
+        <fullName>Sales Process</fullName>
+        <description>Process for sales cases.</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Awaiting customer feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Support Process</fullName>
+        <description>Process for support cases.</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Awaiting customer feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed - Bug fix submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed - Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed - Out of scope</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed - Resolved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed - Routed to internal helpdesk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>true</enableFeeds>
     <fields>
@@ -66,6 +132,42 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Agent__c</fullName>
+        <externalId>false</externalId>
+        <label>Agent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Agent1</fullName>
+                    <default>false</default>
+                    <label>Agent1</label>
+                </value>
+                <value>
+                    <fullName>Agent2</fullName>
+                    <default>false</default>
+                    <label>Agent2</label>
+                </value>
+                <value>
+                    <fullName>Agent3</fullName>
+                    <default>false</default>
+                    <label>Agent3</label>
+                </value>
+                <value>
+                    <fullName>Agent4</fullName>
+                    <default>false</default>
+                    <label>Agent4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>AssetId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -73,11 +175,284 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Bad_Escalation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Bad Escalation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Branch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Branch</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>BusinessHoursId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case_Feature__c</fullName>
+        <description>Copado features.</description>
+        <externalId>false</externalId>
+        <label>Case Feature</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Case_Reason_Custom__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Git Snapshot</fullName>
+                    <default>false</default>
+                    <label>Git Snapshot</label>
+                </value>
+                <value>
+                    <fullName>Org Credential</fullName>
+                    <default>false</default>
+                    <label>Org Credential</label>
+                </value>
+                <value>
+                    <fullName>Org Differences</fullName>
+                    <default>false</default>
+                    <label>Org Differences</label>
+                </value>
+                <value>
+                    <fullName>Git Repository</fullName>
+                    <default>false</default>
+                    <label>Git Repository</label>
+                </value>
+                <value>
+                    <fullName>User Story</fullName>
+                    <default>false</default>
+                    <label>User Story</label>
+                </value>
+                <value>
+                    <fullName>Promotions</fullName>
+                    <default>false</default>
+                    <label>Promotions</label>
+                </value>
+                <value>
+                    <fullName>Deployment Flows</fullName>
+                    <default>false</default>
+                    <label>Deployment Flows</label>
+                </value>
+                <value>
+                    <fullName>Snapshot Differences</fullName>
+                    <default>false</default>
+                    <label>Snapshot Differences</label>
+                </value>
+                <value>
+                    <fullName>Deployment</fullName>
+                    <default>false</default>
+                    <label>Deployment</label>
+                </value>
+                <value>
+                    <fullName>Environment</fullName>
+                    <default>false</default>
+                    <label>Environment</label>
+                </value>
+                <value>
+                    <fullName>Projects</fullName>
+                    <default>false</default>
+                    <label>Projects</label>
+                </value>
+                <value>
+                    <fullName>Sprints</fullName>
+                    <default>false</default>
+                    <label>Sprints</label>
+                </value>
+                <value>
+                    <fullName>User Stories</fullName>
+                    <default>false</default>
+                    <label>User Stories</label>
+                </value>
+                <value>
+                    <fullName>Continuous Integration</fullName>
+                    <default>false</default>
+                    <label>Continuous Integration</label>
+                </value>
+                <value>
+                    <fullName>Pre/Post Build Automation</fullName>
+                    <default>false</default>
+                    <label>Pre/Post Build Automation</label>
+                </value>
+                <value>
+                    <fullName>Permissions &amp; Notifications</fullName>
+                    <default>false</default>
+                    <label>Permissions &amp; Notifications</label>
+                </value>
+                <value>
+                    <fullName>Branch Management Permissions</fullName>
+                    <default>false</default>
+                    <label>Branch Management Permissions</label>
+                </value>
+                <value>
+                    <fullName>Reports &amp; Dashboards</fullName>
+                    <default>false</default>
+                    <label>Reports &amp; Dashboards</label>
+                </value>
+                <value>
+                    <fullName>Permissions</fullName>
+                    <default>false</default>
+                    <label>Permissions</label>
+                </value>
+                <value>
+                    <fullName>Authentication</fullName>
+                    <default>false</default>
+                    <label>Authentication</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Copado Core</controllingFieldValue>
+                <valueName>Git Snapshot</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Copado Core</controllingFieldValue>
+                <valueName>Org Credential</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Copado Core</controllingFieldValue>
+                <valueName>Org Differences</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Copado Core</controllingFieldValue>
+                <valueName>Git Repository</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Change Management</controllingFieldValue>
+                <valueName>User Story</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Change Management</controllingFieldValue>
+                <valueName>Promotions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Branch Management</controllingFieldValue>
+                <valueName>Deployment Flows</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Case_Reason_Custom__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Reason Custom</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Copado Core</fullName>
+                    <default>false</default>
+                    <label>Copado Core</label>
+                </value>
+                <value>
+                    <fullName>Change Management</fullName>
+                    <default>false</default>
+                    <label>Change Management</label>
+                </value>
+                <value>
+                    <fullName>Continuous Integration</fullName>
+                    <default>false</default>
+                    <label>Continuous Integration</label>
+                </value>
+                <value>
+                    <fullName>Branch Management</fullName>
+                    <default>false</default>
+                    <label>Branch Management</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Licenses</fullName>
+                    <default>false</default>
+                    <label>Licenses</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+                <value>
+                    <fullName>Cancelation</fullName>
+                    <default>false</default>
+                    <label>Cancelation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Check1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Check1</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Check2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Check2</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Check3__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Check3</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Check4__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Check4</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Check5__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Check5</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>ClosedDate</fullName>
@@ -117,6 +492,16 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Elisa__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Elisa</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>EngineeringReqNumber__c</fullName>
         <externalId>false</externalId>
         <label>Engineering Req Number</label>
@@ -139,6 +524,17 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Now_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOW()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Now Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Origin</fullName>
@@ -206,16 +602,6 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>GC1040</fullName>
-                    <default>false</default>
-                    <label>GC1040</label>
-                </value>
-                <value>
-                    <fullName>GC1060</fullName>
-                    <default>false</default>
-                    <label>GC1060</label>
-                </value>
-                <value>
                     <fullName>GC3020</fullName>
                     <default>false</default>
                     <label>GC3020</label>
@@ -261,6 +647,31 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Required_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Required Number</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SHI_Test__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.SHI_Test__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SHI Test</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>SLAViolation__c</fullName>
         <externalId>false</externalId>
         <label>SLA Violation</label>
@@ -284,6 +695,16 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Spring17Issue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Spring17Issue</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Status</fullName>
@@ -331,6 +752,7 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <controllingField>Product__c</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -355,6 +777,29 @@
                     <label>Really Urgent</label>
                 </value>
             </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>GC1020</controllingFieldValue>
+                <controllingFieldValue>GC3060</controllingFieldValue>
+                <valueName>Really Urgent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>GC3020</controllingFieldValue>
+                <controllingFieldValue>GC3040</controllingFieldValue>
+                <controllingFieldValue>GC5020</controllingFieldValue>
+                <controllingFieldValue>GC5040</controllingFieldValue>
+                <valueName>Urgent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>GC3040</controllingFieldValue>
+                <controllingFieldValue>GC5020</controllingFieldValue>
+                <valueName>Not Urgent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>GC3040</controllingFieldValue>
+                <controllingFieldValue>GC3060</controllingFieldValue>
+                <controllingFieldValue>GC5060</controllingFieldValue>
+                <valueName>Quite Urgent</valueName>
+            </valueSettings>
         </valueSet>
     </fields>
     <listViews>
@@ -400,14 +845,474 @@
         <label>My Open Cases</label>
     </listViews>
     <listViews>
-        <fullName>prod_queue_Case</fullName>
+        <fullName>Spam_Cases_Case</fullName>
         <filterScope>Queue</filterScope>
-        <label>prod queue</label>
-        <queue>prod_queue</queue>
+        <label>Spam Cases</label>
+        <queue>Spam_Cases</queue>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
     </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Sales_Case</fullName>
+        <active>true</active>
+        <businessProcess>Sales Process</businessProcess>
+        <description>record type for sales cases</description>
+        <label>Sales Case</label>
+        <picklistValues>
+            <picklist>Agent__c</picklist>
+            <values>
+                <fullName>Agent1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Feature__c</picklist>
+            <values>
+                <fullName>Org Credential</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Reason_Custom__c</picklist>
+            <values>
+                <fullName>Cancelation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licenses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PotentialLiability__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>GC1020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3060</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5060</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Branch Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Continuous Integration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copado Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licenses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLAViolation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Urgency__c</picklist>
+            <values>
+                <fullName>Not Urgent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quite Urgent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Really Urgent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urgent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Support_Case</fullName>
+        <active>true</active>
+        <businessProcess>Support Process</businessProcess>
+        <description>Record type for support cases</description>
+        <label>Support Case</label>
+        <picklistValues>
+            <picklist>Agent__c</picklist>
+            <values>
+                <fullName>Agent1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Feature__c</picklist>
+            <values>
+                <fullName>Authentication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Management Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Continuous Integration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deployment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deployment Flows</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Git Repository</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Git Snapshot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Org Credential</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Org Differences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permissions %26 Notifications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre%2FPost Build Automation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Projects</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports %26 Dashboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapshot Differences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sprints</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Stories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User Story</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Reason_Custom__c</picklist>
+            <values>
+                <fullName>Branch Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Continuous Integration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copado Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PotentialLiability__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>GC1020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3060</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5060</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Branch Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Continuous Integration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copado Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licenses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLAViolation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Urgency__c</picklist>
+            <values>
+                <fullName>Not Urgent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quite Urgent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Really Urgent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urgent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>

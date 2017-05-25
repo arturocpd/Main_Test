@@ -88,10 +88,34 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Check_case_test_1__c</fullName>
+        <fullName>Check1__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <label>Check case test 1</label>
+        <label>Check1</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Check2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Check2</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Check3__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Check3</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Check4__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Check4</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
     </fields>
@@ -172,15 +196,18 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Lead_Number__c</fullName>
-        <displayFormat>{0}</displayFormat>
-        <externalId>false</externalId>
-        <label>Lead Number</label>
-        <type>AutoNumber</type>
-    </fields>
-    <fields>
         <fullName>MobilePhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Money__c</fullName>
+        <externalId>false</externalId>
+        <label>Money</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Name</fullName>
@@ -267,18 +294,6 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Round_Robin_ID__c</fullName>
-        <externalId>false</externalId>
-        <formula>MOD(VALUE(Lead_Number__c) ,2)+1</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Round_Robin_ID</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>SICCode__c</fullName>
         <externalId>false</externalId>
         <label>SIC Code</label>
@@ -287,14 +302,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Scenario2_1__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>Scenario2.1</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Status</fullName>
