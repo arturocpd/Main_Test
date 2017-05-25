@@ -331,6 +331,7 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <controllingField>Product__c</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -355,6 +356,29 @@
                     <label>Really Urgent</label>
                 </value>
             </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>GC1020</controllingFieldValue>
+                <controllingFieldValue>GC3060</controllingFieldValue>
+                <valueName>Really Urgent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>GC3020</controllingFieldValue>
+                <controllingFieldValue>GC3040</controllingFieldValue>
+                <controllingFieldValue>GC5020</controllingFieldValue>
+                <controllingFieldValue>GC5040</controllingFieldValue>
+                <valueName>Urgent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>GC3040</controllingFieldValue>
+                <controllingFieldValue>GC5020</controllingFieldValue>
+                <valueName>Not Urgent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>GC3040</controllingFieldValue>
+                <controllingFieldValue>GC3060</controllingFieldValue>
+                <controllingFieldValue>GC5060</controllingFieldValue>
+                <valueName>Quite Urgent</valueName>
+            </valueSettings>
         </valueSet>
     </fields>
     <listViews>
