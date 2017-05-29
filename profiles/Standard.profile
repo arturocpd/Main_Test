@@ -4929,6 +4929,11 @@
     </pageAccesses>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>Case.Sales_Case</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
