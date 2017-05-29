@@ -418,6 +418,13 @@
             <allInternalUsers></allInternalUsers>
         </sharedTo>
     </listViews>
+    <recordTypes>
+        <fullName>Sales_Case</fullName>
+        <active>true</active>
+        <businessProcess>Sales Process</businessProcess>
+        <description>record type for sales cases</description>
+        <label>Sales Case</label>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
