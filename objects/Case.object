@@ -418,6 +418,24 @@
             <allInternalUsers></allInternalUsers>
         </sharedTo>
     </listViews>
+    <recordTypes>
+        <fullName>Case_Layout1</fullName>
+        <active>true</active>
+        <businessProcess>Support process 1</businessProcess>
+        <label>Case Layout1</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_2</fullName>
+        <active>true</active>
+        <businessProcess>Support process 1</businessProcess>
+        <label>Record type 2</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_3</fullName>
+        <active>true</active>
+        <businessProcess>Support process 1</businessProcess>
+        <label>Record type 3</label>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
