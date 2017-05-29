@@ -103,10 +103,6 @@
                 <field>Agent__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Bad_Escalation__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Now_Time__c</field>
             </layoutItems>
