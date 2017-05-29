@@ -242,7 +242,7 @@
     <fields>
         <fullName>IsEscalated</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
@@ -321,6 +321,16 @@
         <valueSet>
             <valueSetDefinition>
                 <sorted>false</sorted>
+                <value>
+                    <fullName>GC1040</fullName>
+                    <default>false</default>
+                    <label>GC1040</label>
+                </value>
+                <value>
+                    <fullName>GC1060</fullName>
+                    <default>false</default>
+                    <label>GC1060</label>
+                </value>
                 <value>
                     <fullName>GC3020</fullName>
                     <default>false</default>
@@ -439,7 +449,6 @@
     </fields>
     <fields>
         <fullName>Urgency__c</fullName>
-        <description>Description</description>
         <externalId>false</externalId>
         <label>Urgency</label>
         <required>false</required>
@@ -448,7 +457,6 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
-            <controllingField>Product__c</controllingField>
             <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
@@ -472,45 +480,7 @@
                     <default>false</default>
                     <label>Really Urgent</label>
                 </value>
-                <value>
-                    <fullName>Extremely Urgent</fullName>
-                    <default>false</default>
-                    <label>Extremely Urgent</label>
-                </value>
-                <value>
-                    <fullName>NewValue</fullName>
-                    <default>false</default>
-                    <label>NewValue</label>
-                </value>
-                <value>
-                    <fullName>Test Fix</fullName>
-                    <default>false</default>
-                    <label>Test Fix</label>
-                </value>
             </valueSetDefinition>
-            <valueSettings>
-                <controllingFieldValue>GC1020</controllingFieldValue>
-                <controllingFieldValue>GC3060</controllingFieldValue>
-                <valueName>Really Urgent</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>GC3020</controllingFieldValue>
-                <controllingFieldValue>GC3040</controllingFieldValue>
-                <controllingFieldValue>GC5020</controllingFieldValue>
-                <controllingFieldValue>GC5040</controllingFieldValue>
-                <valueName>Urgent</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>GC3040</controllingFieldValue>
-                <controllingFieldValue>GC5020</controllingFieldValue>
-                <valueName>Not Urgent</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>GC3040</controllingFieldValue>
-                <controllingFieldValue>GC3060</controllingFieldValue>
-                <controllingFieldValue>GC5060</controllingFieldValue>
-                <valueName>Quite Urgent</valueName>
-            </valueSettings>
         </valueSet>
     </fields>
     <fields>
@@ -594,6 +564,15 @@
             <allInternalUsers></allInternalUsers>
         </sharedTo>
     </listViews>
+    <listViews>
+        <fullName>prod_queue_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>prod queue</label>
+        <queue>prod_queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>true</recordTypeTrackHistory>
     <recordTypes>
@@ -602,30 +581,7 @@
         <businessProcess>Support process 1</businessProcess>
         <label>Case Layout1</label>
         <picklistValues>
-            <picklist>Agent__c</picklist>
-            <values>
-                <fullName>Agent1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Agent2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Agent3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Agent4</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Origin</picklist>
-            <values>
-                <fullName>Email</fullName>
-                <default>false</default>
-            </values>
             <values>
                 <fullName>Phone</fullName>
                 <default>false</default>
@@ -634,80 +590,41 @@
                 <fullName>Web</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
-            <picklist>PotentialLiability__c</picklist>
+            <picklist>SLAViolation__c</picklist>
             <values>
-                <fullName>No</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Yes</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>Priority</picklist>
             <values>
-                <fullName>High</fullName>
-                <default>false</default>
+                <fullName>Medium</fullName>
+                <default>true</default>
             </values>
             <values>
                 <fullName>Low</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Medium</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Product__c</picklist>
-            <values>
-                <fullName>GC1020</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3020</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3040</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3060</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5020</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5040</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5060</fullName>
+                <fullName>High</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>Reason</picklist>
             <values>
-                <fullName>Breakdown</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Equipment Complexity</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Equipment Design</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Feedback</fullName>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -715,7 +632,19 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Equipment Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment Complexity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Breakdown</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -724,28 +653,32 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>SLAViolation__c</picklist>
+            <picklist>PotentialLiability__c</picklist>
             <values>
-                <fullName>No</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Yes</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>Type</picklist>
             <values>
-                <fullName>Electrical</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Electronic</fullName>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Electrical</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Mechanical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type1</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -756,19 +689,65 @@
                 <fullName>Structural</fullName>
                 <default>false</default>
             </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Agent__c</picklist>
             <values>
-                <fullName>Type1</fullName>
+                <fullName>Agent2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent3</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>Urgency__c</picklist>
             <values>
-                <fullName>Extremely Urgent</fullName>
+                <fullName>Really Urgent</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Really Urgent</fullName>
+                <fullName>Extremely Urgent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>GC3060</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5060</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC1020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5020</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -779,77 +758,75 @@
         <businessProcess>Support process 1</businessProcess>
         <label>Record type 2</label>
         <picklistValues>
-            <picklist>Agent__c</picklist>
+            <picklist>Reason</picklist>
             <values>
-                <fullName>Agent1</fullName>
+                <fullName>Breakdown</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Agent2</fullName>
+                <fullName>Feedback</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Agent3</fullName>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Agent4</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Origin</picklist>
-            <values>
-                <fullName>Email</fullName>
+                <fullName>Equipment Design</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Phone</fullName>
+                <fullName>Performance</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Web</fullName>
+                <fullName>Equipment Complexity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>PotentialLiability__c</picklist>
+            <picklist>Type</picklist>
             <values>
-                <fullName>No</fullName>
+                <fullName>Type1</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Priority</picklist>
-            <values>
-                <fullName>High</fullName>
+                <fullName>Electronic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Low</fullName>
+                <fullName>Electrical</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Medium</fullName>
-                <default>true</default>
+                <fullName>Structural</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mechanical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>Product__c</picklist>
             <values>
-                <fullName>GC1020</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3020</fullName>
+                <fullName>GC5060</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>GC3040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC1020</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -865,76 +842,59 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>GC5060</fullName>
+                <fullName>GC3020</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Reason</picklist>
+            <picklist>Origin</picklist>
             <values>
-                <fullName>Breakdown</fullName>
+                <fullName>Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Equipment Complexity</fullName>
+                <fullName>Web</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Equipment Design</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Feedback</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Installation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Performance</fullName>
+                <fullName>Phone</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>SLAViolation__c</picklist>
             <values>
-                <fullName>No</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Yes</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Type</picklist>
+            <picklist>PotentialLiability__c</picklist>
             <values>
-                <fullName>Electrical</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Electronic</fullName>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Low</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Mechanical</fullName>
-                <default>false</default>
+                <fullName>Medium</fullName>
+                <default>true</default>
             </values>
             <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Structural</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Type1</fullName>
+                <fullName>High</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -945,18 +905,8 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes>
-    <recordTypes>
-        <fullName>Record_type_3</fullName>
-        <active>true</active>
-        <businessProcess>Support process 1</businessProcess>
-        <label>Record type 3</label>
         <picklistValues>
             <picklist>Agent__c</picklist>
-            <values>
-                <fullName>Agent1</fullName>
-                <default>false</default>
-            </values>
             <values>
                 <fullName>Agent2</fullName>
                 <default>false</default>
@@ -966,22 +916,109 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Agent1</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Agent4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_type_3</fullName>
+        <active>true</active>
+        <businessProcess>Support process 1</businessProcess>
+        <label>Record type 3</label>
         <picklistValues>
-            <picklist>Origin</picklist>
+            <picklist>Type</picklist>
             <values>
-                <fullName>Email</fullName>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Phone</fullName>
+                <fullName>Electronic</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Web</fullName>
+                <fullName>Type1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mechanical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electrical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Structural</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>GC5060</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC1020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5020</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3060</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Agent__c</picklist>
+            <values>
+                <fullName>Agent2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agent3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -997,59 +1034,43 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Priority</picklist>
+            <picklist>SLAViolation__c</picklist>
             <values>
-                <fullName>High</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Low</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
-                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Product__c</picklist>
+            <picklist>Origin</picklist>
             <values>
-                <fullName>GC1020</fullName>
+                <fullName>Phone</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>GC3020</fullName>
+                <fullName>Email</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>GC3040</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3060</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5020</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5040</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5060</fullName>
+                <fullName>Web</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>Reason</picklist>
             <values>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Breakdown</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Equipment Complexity</fullName>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1057,7 +1078,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Feedback</fullName>
+                <fullName>Performance</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1065,49 +1086,7 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Performance</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>SLAViolation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Type</picklist>
-            <values>
-                <fullName>Electrical</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Electronic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Mechanical</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Structural</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Type1</fullName>
+                <fullName>Equipment Complexity</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1125,36 +1104,33 @@
         <businessProcess>Support process 1</businessProcess>
         <label>Record type 4</label>
         <picklistValues>
-            <picklist>Agent__c</picklist>
+            <picklist>Product__c</picklist>
             <values>
-                <fullName>Agent1</fullName>
+                <fullName>GC3020</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Agent2</fullName>
+                <fullName>GC5040</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Agent3</fullName>
+                <fullName>GC5020</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Agent4</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Origin</picklist>
-            <values>
-                <fullName>Email</fullName>
+                <fullName>GC3060</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Phone</fullName>
+                <fullName>GC1020</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Web</fullName>
+                <fullName>GC3040</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5060</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1170,11 +1146,75 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Priority</picklist>
+            <picklist>Urgency__c</picklist>
             <values>
-                <fullName>High</fullName>
+                <fullName>Test Fix</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Not Urgent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLAViolation__c</picklist>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Equipment Complexity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Breakdown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment Design</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
             <values>
                 <fullName>Low</fullName>
                 <default>false</default>
@@ -1183,84 +1223,38 @@
                 <fullName>Medium</fullName>
                 <default>true</default>
             </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Product__c</picklist>
             <values>
-                <fullName>GC1020</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3020</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3040</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3060</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5020</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5040</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5060</fullName>
+                <fullName>High</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Reason</picklist>
+            <picklist>Agent__c</picklist>
             <values>
-                <fullName>Breakdown</fullName>
+                <fullName>Agent2</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Equipment Complexity</fullName>
+                <fullName>Agent3</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Equipment Design</fullName>
+                <fullName>Agent4</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Feedback</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Installation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Performance</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>SLAViolation__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
+                <fullName>Agent1</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
         <picklistValues>
             <picklist>Type</picklist>
             <values>
-                <fullName>Electrical</fullName>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Type1</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1272,26 +1266,11 @@
                 <default>false</default>
             </values>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Electrical</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Structural</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Type1</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Urgency__c</picklist>
-            <values>
-                <fullName>Not Urgent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Test Fix</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
