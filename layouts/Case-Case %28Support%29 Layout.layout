@@ -115,6 +115,10 @@
                 <behavior>Edit</behavior>
                 <field>Validate_Only3__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Version_8__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
