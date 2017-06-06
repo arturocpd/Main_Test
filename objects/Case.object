@@ -358,6 +358,16 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Version_8__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Version 8</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>profile_test__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
